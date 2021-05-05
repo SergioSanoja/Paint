@@ -32,7 +32,7 @@ def rectangle(start, end):
     down()
     begin_fill()        # Start filling the drawn shape.
 
-    for count in range(2):      # Traces the square by calculating its length and turning 90 degrees 4 times.
+    for count in range(2):      # Traces the rectangle by calculating its lengths and turning 90 degrees 4 times.
         forward(end.x - start.x)
         left(90)
         forward(end.y - start.y)
@@ -47,7 +47,7 @@ def triangle(start, end):
     down()
     begin_fill()        # Start filling the drawn shape.
 
-    for count in range(3):      # Traces the square by calculating its length and turning 90 degrees 4 times.
+    for count in range(3):      # Traces the triangle by calculating its length and turning 120 degrees 3 times.
         forward(end.x - start.x)
         left(120)
         
