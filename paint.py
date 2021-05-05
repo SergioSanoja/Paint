@@ -3,9 +3,9 @@ from freegames import vector
 
 def line(start, end):
     "Draw line from start to end."
-    up()
+    up()        # Pull the pen up. 
     goto(start.x, start.y)
-    down()
+    down()      # Pull the pen down, start drawing.
     goto(end.x, end.y)
 
 def square(start, end):
@@ -13,9 +13,9 @@ def square(start, end):
     up()
     goto(start.x, start.y)
     down()
-    begin_fill()
+    begin_fill()        # Start filling the drawn shape.
 
-    for count in range(4):
+    for count in range(4):      # Traces the square by calculating its length and turning 90 degrees 4 times.
         forward(end.x - start.x)
         left(90)
 
@@ -26,8 +26,19 @@ def circle(start, end):
     pass  # TODO
 
 def rectangle(start, end):
-    "Draw rectangle from start to end."
-    pass  # TODO
+    "Draw square from start to end."
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()        # Start filling the drawn shape.
+
+    for count in range(2):      # Traces the square by calculating its length and turning 90 degrees 4 times.
+        forward(end.x - start.x)
+        left(90)
+        forward(end.y - start.y)
+        left(90)
+
+    end_fill()
 
 def triangle(start, end):
     "Draw triangle from start to end."
