@@ -4,7 +4,8 @@ from freegames import vector
 
 def line(start, end):
     "Draw line from start to end."
-    up()        # Pull the pen up. 
+    up()        # Pull the pen up.
+    turtle.seth(0)
     goto(start.x, start.y)
     down()      # Pull the pen down, start drawing.
     goto(end.x, end.y)
@@ -12,6 +13,7 @@ def line(start, end):
 def square(start, end):
     "Draw square from start to end."
     up()
+    turtle.seth(0)
     goto(start.x, start.y)
     down()
     begin_fill()        # Start filling the drawn shape.
@@ -36,6 +38,7 @@ def circle(start, end):
 def rectangle(start, end):
     "Draw rectangle from start to end."
     up()
+    turtle.seth(0)
     goto(start.x, start.y)
     down()
     begin_fill()        # Start filling the drawn shape.
@@ -51,6 +54,7 @@ def rectangle(start, end):
 def triangle(start, end):
     "Draw triangle from start to end."
     up()
+    turtle.seth(0)
     goto(start.x, start.y)
     down()
     begin_fill()        # Start filling the drawn shape.
