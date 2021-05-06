@@ -75,24 +75,24 @@ def triangle(start, end):
 def tap(x, y):
     "Store starting point or draw shape."
     start = state['start']
-
+    # Checks if its the first or second tap.
     if start is None:
-        state['start'] = vector(x, y)
+        state['start'] = vector(x, y)   # Defines in the state, the starting point.
     else:
-        shape = state['shape']
-        end = vector(x, y)
-        shape(start, end)
-        state['start'] = None
+        shape = state['shape']          # Defines the state's shape as the selected one.
+        end = vector(x, y)              # Defines the ending point.
+        shape(start, end)               # Assigns the start and end point to the shape.
+        state['start'] = None           # Resets the 'start' value.
 
 def store(key, value):
     "Store value in state at key."
-    state[key] = value
+    state[key] = value                 #  Defines the  selected value in state.
 
-state = {'start': None, 'shape': line}      # 
-setup(420, 420, 370, 0)                     # 
-onscreenclick(tap)                          # 
-listen()                                    # 
-onkey(undo, 'u')                            # 
+state = {'start': None, 'shape': line}     # Sets the inicial values in state.
+setup(420, 420, 370, 0)                    # Sets the size and position of the main window.
+onscreenclick(tap)                         # Calls the "tap" function on screen click.
+listen()                                   # Prepares the turtle to receive directions.
+onkey(undo, 'u')                           # Erases the last drawn shape.
 
 # Defines the keys to change the color of the shape.
 onkey(lambda: color('black'), 'K')
