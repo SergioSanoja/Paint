@@ -1,4 +1,4 @@
-# Modificado por:
+# Código modificado por:
 # Autor: Sergio Adolfo Sanoja Hernández
 # Autor: Fabián Castillo Rodríguez
 
@@ -6,16 +6,22 @@ from turtle import *
 import turtle
 from freegames import vector
 
+
 def line(start, end):
-    "Draw line from start to end."
+    """
+    Draw a line from start to end.
+    """
     up()                # Pull the pen up.
     turtle.seth(0)      # Turn the head to view at 0 degrees.
     goto(start.x, start.y)
     down()              # Pull the pen down, start drawing.
     goto(end.x, end.y)
 
+
 def square(start, end):
-    "Draw square from start to end."
+    """
+    Draw a square from start to end.
+    """
     up()
     turtle.seth(0)
     goto(start.x, start.y)
@@ -29,8 +35,11 @@ def square(start, end):
 
     end_fill()                  # Stop filling the drawn shape.
 
+
 def circle(start, end):
-    "Draw circle from start to end."
+    """
+    Draw a circle from start to end with radius (end.x - start.x)/2.
+    """
     up()
     goto(end.x, end.y)
     radius = ((end.x - start.x)/2)        # Define the radius of the circle.
@@ -40,8 +49,11 @@ def circle(start, end):
     turtle.circle(radius)                 # Start drawing the circle from the radius.
     end_fill()
 
+
 def rectangle(start, end):
-    "Draw rectangle from start to end."
+    """
+    Draw a rectagle from start to end.
+    """
     up()
     turtle.seth(0)
     goto(start.x, start.y)
@@ -57,8 +69,11 @@ def rectangle(start, end):
 
     end_fill()
 
+
 def triangle(start, end):
-    "Draw triangle from start to end."
+    """
+    Draw a triangle from start to end.
+    """
     up()
     turtle.seth(0)
     goto(start.x, start.y)
@@ -72,8 +87,11 @@ def triangle(start, end):
         
     end_fill()
 
+
 def tap(x, y):
-    "Store starting point or draw shape."
+    """"
+    Store starting point or draw shape.
+    """
     start = state['start']
 
     if start is None:
@@ -84,9 +102,13 @@ def tap(x, y):
         shape(start, end)
         state['start'] = None
 
+
 def store(key, value):
-    "Store value in state at key."
+    """"
+    Store value in state at key.
+    """
     state[key] = value
+
 
 state = {'start': None, 'shape': line}      # 
 setup(420, 420, 370, 0)                     # 
