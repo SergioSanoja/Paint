@@ -2,6 +2,7 @@
 # Autor: Sergio Adolfo Sanoja Hernández
 # Autor: Fabián Castillo Rodríguez
 
+
 from turtle import *
 import turtle
 from freegames import vector
@@ -93,6 +94,7 @@ def tap(x, y):
     Store starting point or draw shape.
     """
     start = state['start']
+    
     # Checks if its the first or second tap.
     if start is None:
         state['start'] = vector(x, y)   # Defines in the state, the starting point.
@@ -104,16 +106,17 @@ def tap(x, y):
 
 
 def store(key, value):
-
-    "Store value in state at key."
+    """
+    Store value in state at key.
+    """
     state[key] = value                 #  Defines the  selected value in state.
+
 
 state = {'start': None, 'shape': line}     # Sets the inicial values in state.
 setup(420, 420, 370, 0)                    # Sets the size and position of the main window.
 onscreenclick(tap)                         # Calls the "tap" function on screen click.
 listen()                                   # Prepares the turtle to receive directions.
 onkey(undo, 'u')                           # Erases the last drawn shape.
-
 
 # Defines the keys to change the color of the shape.
 onkey(lambda: color('black'), 'K')
